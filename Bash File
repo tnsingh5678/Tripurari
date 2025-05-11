@@ -1,0 +1,6 @@
+
+curl -s https://www.amfiindia.com/spages/NAVAll.txt -o NAVAll.txt
+
+awk -F';' 'NF > 1 && $4 != "" { print $4 "\t" $5 }' NAVAll.txt > scheme_nav.tsv
+
+echo "Extracted scheme names and NAV values into scheme_nav.tsv"
